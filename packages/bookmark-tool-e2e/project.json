@@ -1,0 +1,33 @@
+{
+  "name": "bookmark-tool-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bookmark-tool-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "packages/bookmark-tool-e2e/cypress.config.ts",
+        "devServerTarget": "bookmark-tool:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "bookmark-tool:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "bookmark-tool:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/bookmark-tool-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["bookmark-tool"]
+}
