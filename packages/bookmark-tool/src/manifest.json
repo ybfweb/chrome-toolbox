@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "My Extension",
+  "version": "1.0",
+  "description": "Get bookmarks from user's favorites.",
+  "permissions": ["bookmarks"],
+  "icons": {
+    "48": "./icon/bookmark_icon.png"
+  },
+  "action": {
+    "default_popup": "./index.html",
+    "default_icon": {
+      "16": "./icon/bookmark_icon.png",
+      "48": "./icon/bookmark_icon.png",
+      "128": "./icon/bookmark_icon.png"
+    }
+  }
+}
